@@ -12,8 +12,23 @@ func gitCheckoutToRemoteBranch() {
 		panic(err)
 	}
 
-	fmt.Println("%T", out)
+	fmt.Println(string(out))
 
+	// 文字列を1行入力
+	// func StrStdin() (stringInput string) {
+	// 	scanner := bufio.NewScanner(os.Stdin)
+
+	// 	scanner.Scan()
+	// 	stringInput = scanner.Text()
+
+	// 	stringInput = strings.TrimSpace(stringInput)
+	// 	return
+	// }
+
+	// func main() {
+	// 	p := StrStdin()
+	// 	fmt.Println(p)
+	// }
 	// scanner := bufio.NewScanner(os.Stdin)
 	// for scanner.Scan() {
 	// 	i := scanner.Text()
