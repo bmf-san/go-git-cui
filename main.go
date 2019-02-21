@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"os/exec"
 	"regexp"
 	"strings"
@@ -27,6 +29,29 @@ func showRemoteBranch() {
 	for i, v := range branches {
 		fmt.Println(i, v)
 	}
+
+	fmt.Println("Select a branch number:")
+
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		i := scanner.Text()
+
+		if i == "Y" || i == "y" {
+			break
+		} else if i == "N" || i == "n" {
+			result = false
+			break
+		} else {
+			fmt.Println("yかnで答えてください。")
+			fmt.Print(q)
+		}
+	}
+
+	if err := scanner.Err(); err != nil {
+		panic(err)
+	}
+
+	resultをゴニョゴニョ
 }
 
 func main() {
