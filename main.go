@@ -33,11 +33,11 @@ func checkOutToRemoteBranch(branches []string) {
 
 	out, err := exec.Command("git", "checkout", "-b", branches[input], branches[input]).Output()
 
-	fmt.Println(string(out))
-
 	if err != nil {
 		panic(err)
 	}
+
+	fmt.Println(string(out))
 }
 
 func main() {
