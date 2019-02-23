@@ -31,7 +31,9 @@ func checkOutToRemoteBranch(branches []string) {
 	scanner.Scan()
 	input, _ := strconv.Atoi(scanner.Text())
 
-	_, err := exec.Command("git", "checkout", "-b", branches[input], branches[input]).Output()
+	out, err := exec.Command("git", "checkout", "-b", branches[input], branches[input]).Output()
+
+	fmt.Println(string(out))
 
 	if err != nil {
 		panic(err)
